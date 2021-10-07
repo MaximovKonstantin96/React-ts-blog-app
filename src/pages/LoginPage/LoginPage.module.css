@@ -5,3 +5,11 @@
   height: 100%;
   margin: 2rem;
 }
+
+.root {
+  margin-top: 50px;
+}
+.card {
+  max-width: 600px;
+  margin: 0 auto;
+}
