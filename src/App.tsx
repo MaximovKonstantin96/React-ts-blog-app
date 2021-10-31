@@ -1,18 +1,20 @@
-import './App.css';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { LoginPage } from './pages/LoginPage/LoginPage';
-import RegisterPage from './pages/RegisterPage/RegisterPage';
-import ProfilePage from './pages/ProfilePage/ProfilePage';
-import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
-import HomePage from './pages/HomePage/HomePage';
-import { getIsAuthorized } from './redux/auth/selectors';
-import { useSelector } from 'react-redux';
+import "./App.css";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { LoginPage } from "./pages/LoginPage/LoginPage";
+import RegisterPage from "./pages/RegisterPage/RegisterPage";
+import ProfilePage from "./pages/ProfilePage/ProfilePage";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import HomePage from "./pages/HomePage/HomePage";
+import { getIsAuthorized } from "./redux/auth/selectors";
+import { useSelector } from "react-redux";
+import HeaderComp from "./components/HeaderComp/HeaderComp";
 
 function App() {
   const isAuthorized = useSelector(getIsAuthorized);
 
   return (
     <BrowserRouter>
+      <HeaderComp />
       {!isAuthorized && (
         <Switch>
           <Route path="/" exact component={HomePage} />
